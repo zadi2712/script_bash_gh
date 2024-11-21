@@ -1,0 +1,36 @@
+
+
+#!/bin/bash
+
+# Set new secrets
+gh secret set SECRET_1 --repo myuser/myrepo --body "new_secret_1_value"
+gh secret set SECRET_2 --repo myuser/myrepo --body "new_secret_2_value"
+
+# Set new variables
+gh variable set VAR_1 --repo myuser/myrepo --value "new_var_1_value"
+gh variable set VAR_2 --repo myuser/myrepo --value "new_var_2_value"
+
+echo "Secrets and variables updated successfully!"
+
+
+gh secret delete SECRET_NAME --repo OWNER/REPO
+
+
+gh variable delete VARIABLE_NAME --repo OWNER/REPO
+
+
+chmod +x update_secrets_and_variables.sh
+
+
+./update_secrets_and_variables.sh
+
+
+txt
+
+# Secrets
+SECRET_1=new_secret_value_1
+SECRET_2=new_secret_value_2
+
+# Variables
+VAR_1=new_var_value_1
+VAR_2=new_var_value_2
